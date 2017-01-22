@@ -1,0 +1,513 @@
+fileFormatVersion: 2
+guid: 80de53531921e35448521c4968214669
+timeCreated: 1485028442
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Camera
+    100002: handle1
+    100004: handle1_end
+    100006: handle2
+    100008: handle2_end
+    100010: handle3
+    100012: handle3_end
+    100014: handle4
+    100016: handle4_end
+    100018: handle5
+    100020: handle5_end
+    100022: inner1
+    100024: inner1_end
+    100026: inner2
+    100028: inner2_end
+    100030: inner3
+    100032: inner3_end
+    100034: inner4
+    100036: inner4_end
+    100038: inner5
+    100040: inner5_end
+    100042: inner6
+    100044: inner6_end
+    100046: inner7
+    100048: inner7_end
+    100050: inner8
+    100052: inner8_end
+    100054: //RootNode
+    100056: mid1
+    100058: mid1_end
+    100060: mid2
+    100062: mid2_end
+    100064: mid3
+    100066: mid3_end
+    100068: mid4
+    100070: mid4_end
+    100072: mid5
+    100074: mid5_end
+    100076: mid6
+    100078: mid6_end
+    100080: mid7
+    100082: mid7_end
+    100084: mid8
+    100086: mid8_end
+    100088: out1
+    100090: out1_end
+    100092: out2
+    100094: out2_end
+    100096: out3
+    100098: out3_end
+    100100: out4
+    100102: out4_end
+    100104: out5
+    100106: out5_end
+    100108: out6
+    100110: out6_end
+    100112: out7
+    100114: out7_end
+    100116: out8
+    100118: out8_end
+    100120: Plane.001
+    100122: WATER
+    100124: WATER_ARMATURE
+    400000: Camera
+    400002: handle1
+    400004: handle1_end
+    400006: handle2
+    400008: handle2_end
+    400010: handle3
+    400012: handle3_end
+    400014: handle4
+    400016: handle4_end
+    400018: handle5
+    400020: handle5_end
+    400022: inner1
+    400024: inner1_end
+    400026: inner2
+    400028: inner2_end
+    400030: inner3
+    400032: inner3_end
+    400034: inner4
+    400036: inner4_end
+    400038: inner5
+    400040: inner5_end
+    400042: inner6
+    400044: inner6_end
+    400046: inner7
+    400048: inner7_end
+    400050: inner8
+    400052: inner8_end
+    400054: //RootNode
+    400056: mid1
+    400058: mid1_end
+    400060: mid2
+    400062: mid2_end
+    400064: mid3
+    400066: mid3_end
+    400068: mid4
+    400070: mid4_end
+    400072: mid5
+    400074: mid5_end
+    400076: mid6
+    400078: mid6_end
+    400080: mid7
+    400082: mid7_end
+    400084: mid8
+    400086: mid8_end
+    400088: out1
+    400090: out1_end
+    400092: out2
+    400094: out2_end
+    400096: out3
+    400098: out3_end
+    400100: out4
+    400102: out4_end
+    400104: out5
+    400106: out5_end
+    400108: out6
+    400110: out6_end
+    400112: out7
+    400114: out7_end
+    400116: out8
+    400118: out8_end
+    400120: Plane.001
+    400122: WATER
+    400124: WATER_ARMATURE
+    2300000: Plane.001
+    3300000: Plane.001
+    4300000: WATER
+    4300002: Plane.001
+    7400000: waves_loop
+    7400002: WATER_ARMATURE|waves_loop
+    9500000: //RootNode
+    13700000: WATER
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: waves_loop
+      takeName: waves_loop
+      firstFrame: 0
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Plane.001
+        weight: 1
+      - path: WATER
+        weight: 1
+      - path: WATER_ARMATURE
+        weight: 1
+      - path: WATER_ARMATURE/handle1
+        weight: 1
+      - path: WATER_ARMATURE/handle1/handle1_end
+        weight: 1
+      - path: WATER_ARMATURE/handle2
+        weight: 1
+      - path: WATER_ARMATURE/handle2/handle2_end
+        weight: 1
+      - path: WATER_ARMATURE/handle3
+        weight: 1
+      - path: WATER_ARMATURE/handle3/handle3_end
+        weight: 1
+      - path: WATER_ARMATURE/handle4
+        weight: 1
+      - path: WATER_ARMATURE/handle4/handle4_end
+        weight: 1
+      - path: WATER_ARMATURE/handle5
+        weight: 1
+      - path: WATER_ARMATURE/handle5/handle5_end
+        weight: 1
+      - path: WATER_ARMATURE/inner1
+        weight: 1
+      - path: WATER_ARMATURE/inner1/inner1_end
+        weight: 1
+      - path: WATER_ARMATURE/inner2
+        weight: 1
+      - path: WATER_ARMATURE/inner2/inner2_end
+        weight: 1
+      - path: WATER_ARMATURE/inner3
+        weight: 1
+      - path: WATER_ARMATURE/inner3/inner3_end
+        weight: 1
+      - path: WATER_ARMATURE/inner4
+        weight: 1
+      - path: WATER_ARMATURE/inner4/inner4_end
+        weight: 1
+      - path: WATER_ARMATURE/inner5
+        weight: 1
+      - path: WATER_ARMATURE/inner5/inner5_end
+        weight: 1
+      - path: WATER_ARMATURE/inner6
+        weight: 1
+      - path: WATER_ARMATURE/inner6/inner6_end
+        weight: 1
+      - path: WATER_ARMATURE/inner7
+        weight: 1
+      - path: WATER_ARMATURE/inner7/inner7_end
+        weight: 1
+      - path: WATER_ARMATURE/inner8
+        weight: 1
+      - path: WATER_ARMATURE/inner8/inner8_end
+        weight: 1
+      - path: WATER_ARMATURE/mid1
+        weight: 1
+      - path: WATER_ARMATURE/mid1/mid1_end
+        weight: 1
+      - path: WATER_ARMATURE/mid2
+        weight: 1
+      - path: WATER_ARMATURE/mid2/mid2_end
+        weight: 1
+      - path: WATER_ARMATURE/mid3
+        weight: 1
+      - path: WATER_ARMATURE/mid3/mid3_end
+        weight: 1
+      - path: WATER_ARMATURE/mid4
+        weight: 1
+      - path: WATER_ARMATURE/mid4/mid4_end
+        weight: 1
+      - path: WATER_ARMATURE/mid5
+        weight: 1
+      - path: WATER_ARMATURE/mid5/mid5_end
+        weight: 1
+      - path: WATER_ARMATURE/mid6
+        weight: 1
+      - path: WATER_ARMATURE/mid6/mid6_end
+        weight: 1
+      - path: WATER_ARMATURE/mid7
+        weight: 1
+      - path: WATER_ARMATURE/mid7/mid7_end
+        weight: 1
+      - path: WATER_ARMATURE/mid8
+        weight: 1
+      - path: WATER_ARMATURE/mid8/mid8_end
+        weight: 1
+      - path: WATER_ARMATURE/out1
+        weight: 1
+      - path: WATER_ARMATURE/out1/out1_end
+        weight: 1
+      - path: WATER_ARMATURE/out2
+        weight: 1
+      - path: WATER_ARMATURE/out2/out2_end
+        weight: 1
+      - path: WATER_ARMATURE/out3
+        weight: 1
+      - path: WATER_ARMATURE/out3/out3_end
+        weight: 1
+      - path: WATER_ARMATURE/out4
+        weight: 1
+      - path: WATER_ARMATURE/out4/out4_end
+        weight: 1
+      - path: WATER_ARMATURE/out5
+        weight: 1
+      - path: WATER_ARMATURE/out5/out5_end
+        weight: 1
+      - path: WATER_ARMATURE/out6
+        weight: 1
+      - path: WATER_ARMATURE/out6/out6_end
+        weight: 1
+      - path: WATER_ARMATURE/out7
+        weight: 1
+      - path: WATER_ARMATURE/out7/out7_end
+        weight: 1
+      - path: WATER_ARMATURE/out8
+        weight: 1
+      - path: WATER_ARMATURE/out8/out8_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: WATER_ARMATURE|waves_loop
+      takeName: WATER_ARMATURE|waves_loop
+      firstFrame: 0
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Plane.001
+        weight: 1
+      - path: WATER
+        weight: 1
+      - path: WATER_ARMATURE
+        weight: 1
+      - path: WATER_ARMATURE/handle1
+        weight: 1
+      - path: WATER_ARMATURE/handle1/handle1_end
+        weight: 1
+      - path: WATER_ARMATURE/handle2
+        weight: 1
+      - path: WATER_ARMATURE/handle2/handle2_end
+        weight: 1
+      - path: WATER_ARMATURE/handle3
+        weight: 1
+      - path: WATER_ARMATURE/handle3/handle3_end
+        weight: 1
+      - path: WATER_ARMATURE/handle4
+        weight: 1
+      - path: WATER_ARMATURE/handle4/handle4_end
+        weight: 1
+      - path: WATER_ARMATURE/handle5
+        weight: 1
+      - path: WATER_ARMATURE/handle5/handle5_end
+        weight: 1
+      - path: WATER_ARMATURE/inner1
+        weight: 1
+      - path: WATER_ARMATURE/inner1/inner1_end
+        weight: 1
+      - path: WATER_ARMATURE/inner2
+        weight: 1
+      - path: WATER_ARMATURE/inner2/inner2_end
+        weight: 1
+      - path: WATER_ARMATURE/inner3
+        weight: 1
+      - path: WATER_ARMATURE/inner3/inner3_end
+        weight: 1
+      - path: WATER_ARMATURE/inner4
+        weight: 1
+      - path: WATER_ARMATURE/inner4/inner4_end
+        weight: 1
+      - path: WATER_ARMATURE/inner5
+        weight: 1
+      - path: WATER_ARMATURE/inner5/inner5_end
+        weight: 1
+      - path: WATER_ARMATURE/inner6
+        weight: 1
+      - path: WATER_ARMATURE/inner6/inner6_end
+        weight: 1
+      - path: WATER_ARMATURE/inner7
+        weight: 1
+      - path: WATER_ARMATURE/inner7/inner7_end
+        weight: 1
+      - path: WATER_ARMATURE/inner8
+        weight: 1
+      - path: WATER_ARMATURE/inner8/inner8_end
+        weight: 1
+      - path: WATER_ARMATURE/mid1
+        weight: 1
+      - path: WATER_ARMATURE/mid1/mid1_end
+        weight: 1
+      - path: WATER_ARMATURE/mid2
+        weight: 1
+      - path: WATER_ARMATURE/mid2/mid2_end
+        weight: 1
+      - path: WATER_ARMATURE/mid3
+        weight: 1
+      - path: WATER_ARMATURE/mid3/mid3_end
+        weight: 1
+      - path: WATER_ARMATURE/mid4
+        weight: 1
+      - path: WATER_ARMATURE/mid4/mid4_end
+        weight: 1
+      - path: WATER_ARMATURE/mid5
+        weight: 1
+      - path: WATER_ARMATURE/mid5/mid5_end
+        weight: 1
+      - path: WATER_ARMATURE/mid6
+        weight: 1
+      - path: WATER_ARMATURE/mid6/mid6_end
+        weight: 1
+      - path: WATER_ARMATURE/mid7
+        weight: 1
+      - path: WATER_ARMATURE/mid7/mid7_end
+        weight: 1
+      - path: WATER_ARMATURE/mid8
+        weight: 1
+      - path: WATER_ARMATURE/mid8/mid8_end
+        weight: 1
+      - path: WATER_ARMATURE/out1
+        weight: 1
+      - path: WATER_ARMATURE/out1/out1_end
+        weight: 1
+      - path: WATER_ARMATURE/out2
+        weight: 1
+      - path: WATER_ARMATURE/out2/out2_end
+        weight: 1
+      - path: WATER_ARMATURE/out3
+        weight: 1
+      - path: WATER_ARMATURE/out3/out3_end
+        weight: 1
+      - path: WATER_ARMATURE/out4
+        weight: 1
+      - path: WATER_ARMATURE/out4/out4_end
+        weight: 1
+      - path: WATER_ARMATURE/out5
+        weight: 1
+      - path: WATER_ARMATURE/out5/out5_end
+        weight: 1
+      - path: WATER_ARMATURE/out6
+        weight: 1
+      - path: WATER_ARMATURE/out6/out6_end
+        weight: 1
+      - path: WATER_ARMATURE/out7
+        weight: 1
+      - path: WATER_ARMATURE/out7/out7_end
+        weight: 1
+      - path: WATER_ARMATURE/out8
+        weight: 1
+      - path: WATER_ARMATURE/out8/out8_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
