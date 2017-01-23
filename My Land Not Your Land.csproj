@@ -75,17 +75,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BattleShipAnimation.cs" />
-    <Compile Include="Assets\RotateCenterObject.cs" />
     <Compile Include="Assets\Scripts\AvailableObsticles.cs" />
+    <Compile Include="Assets\Scripts\BattleShipAnimation.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CollisionBehavior.cs" />
     <Compile Include="Assets\Scripts\LogInScreen.cs" />
     <Compile Include="Assets\Scripts\MoveWithMouse.cs" />
+    <Compile Include="Assets\Scripts\RotateCenterObject.cs" />
     <Compile Include="Assets\Scripts\SeamonsterMovement.cs" />
+    <Compile Include="Assets\Scripts\SirenControl.cs" />
     <Compile Include="Assets\Scripts\SpawnVikings.cs" />
     <Compile Include="Assets\Scripts\StormMovement.cs" />
     <Compile Include="Assets\Scripts\VikingAI.cs" />
     <Compile Include="Assets\Scripts\WhirlpoolMovement.cs" />
+    <Compile Include="Assets\UnicycleController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />

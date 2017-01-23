@@ -4,7 +4,7 @@ using UnityEditor;
 
 public class SeamonsterMovement : MonoBehaviour {
     public float seekingRadius = 2;
-    public float movementSpeed = 0.1f;
+    public float movementSpeed;
     private bool isSeeking = false;
     private Transform self;
     private Transform destination;
@@ -31,17 +31,23 @@ public class SeamonsterMovement : MonoBehaviour {
             {
                 SeekTarget();
             }
+            if (destination == null && isSeeking)
+            {
+                Debug.Log(destination);
+                isSeeking = false;
+                AttachToParent();
+            }
         }   
 	}
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name == "Battleship(Clone)" | other.gameObject.name == "Sailboat(Clone)" | other.gameObject.name == "Surfer(Clone)")
-        {
-            AttachToParent();
-        }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.name == "Battleship(Clone)" | other.gameObject.name == "Sailboat(Clone)" | other.gameObject.name == "Surfer(Clone)")
+    //    {
+    //        AttachToParent();
+    //    }
        
-    }
+    //}
 
     public void AttachToParent()                //Set in AvailableObsticles script when the object is placed.
     {
@@ -55,17 +61,17 @@ public class SeamonsterMovement : MonoBehaviour {
         {
             Vector3 heading = destination.position - self.position;
             heading = heading / heading.magnitude;
-            self.GetComponent<Rigidbody>().MovePosition(self.position + heading * Time.deltaTime);
+            self.GetComponent<Rigidbody>().MovePosition(self.position + heading * movementSpeed * Time.deltaTime);
         }
     }
 
     private void CheckForTargets()
     {
         Collider[] possibleTargets = Physics.OverlapSphere(self.position, seekingRadius);
-        if(possibleTargets.Length > 1)
+        if(possibleTargets.Length > 0)
         {
-            Debug.Log(possibleTargets);
-            Debug.Log(possibleTargets.Length);
+            //Debug.Log(possibleTargets);
+            //Debug.Log(possibleTargets.Length);
             foreach (Collider element in possibleTargets)
             {
                 string prefabName = element.gameObject.name;
@@ -76,7 +82,7 @@ public class SeamonsterMovement : MonoBehaviour {
                     isSeeking = true;
                     self.SetParent(null);
                     self.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    Debug.Log(destination);
+                    //Debug.Log(destination);
                 }
             }
         }        

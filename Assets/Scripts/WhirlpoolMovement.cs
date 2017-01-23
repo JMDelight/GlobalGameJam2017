@@ -12,6 +12,8 @@ public class WhirlpoolMovement : MonoBehaviour {
     public float zPosStart;                     //Set in AvailableObjects script when object is placed
     public bool objectPlaced;
     private bool circleIncreasing = true;
+    public float startingTime;
+
 
 
 
@@ -31,19 +33,20 @@ public class WhirlpoolMovement : MonoBehaviour {
 	void Update () {
         if (objectPlaced)
         {
+            //Debug.Log(Time.time - startingTime);
             //Debug.Log(Mathf.Sin(Time.time * periodChange));
-            var xPos = Mathf.Sin(Time.time * circleSpeed) * circleSize;
-            var zPos = Mathf.Cos(Time.time * circleSpeed) * circleSize;
+            var xPos = Mathf.Sin((Time.time - startingTime) * circleSpeed) * circleSize;
+            var zPos = Mathf.Cos((Time.time - startingTime) * circleSpeed) * circleSize;
 
             position.position = new Vector3(xPos + xPosStart, position.position.y, zPos + zPosStart);
-            if (Mathf.Sin(Time.time / periodChange) > 0)
+            if (Mathf.Sin((Time.time - startingTime) / periodChange) > 0)
             {
-                Debug.Log("increasing");
+                //Debug.Log("increasing");
                 circleIncreasing = true;
             }
             else
             {
-                Debug.Log("decreasing");
+                //Debug.Log("decreasing");
                 circleIncreasing = false;
             }
             if (circleIncreasing)

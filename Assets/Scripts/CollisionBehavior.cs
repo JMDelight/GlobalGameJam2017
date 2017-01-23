@@ -10,6 +10,7 @@ public class CollisionBehavior : MonoBehaviour {
     public Collider Whirlpool;
     private int attackerValue;
     private AvailableObsticles AO;
+    private SpawnVikings SV;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class CollisionBehavior : MonoBehaviour {
         //Debug.Log(PrefabUtility.GetPrefabParent(this.gameObject).name);
         //string name = PrefabUtility.GetPrefabParent(this.gameObject).name;
         AO = GameObject.Find("Available Obsticles").GetComponent<AvailableObsticles>();
+        SV = GameObject.Find("Spawn Vikings").GetComponent<SpawnVikings>();
         if (gameObject.name == "Surfer(Clone)")
         {
             attackerValue = 1;
@@ -67,11 +69,8 @@ public class CollisionBehavior : MonoBehaviour {
         if(resultFight == 1)
         {
             Debug.Log("Destroyed in a loss");
+            SV.livingVikings.Remove(gameObject);
             Destroy(gameObject);
-            //if ()
-            //{
-
-            //}
         }
         else if(resultFight == 0)
         {
@@ -79,8 +78,26 @@ public class CollisionBehavior : MonoBehaviour {
             Debug.Log(random);
             if (random == 0)
             {
-                Debug.Log("Destroyed in a tie");
-                Destroy(gameObject);
+                if (other.name == "Sea Monster(Clone)")
+                {
+                    int secondChance = Random.Range(0, 2);
+                    if (secondChance == 1)
+                    {
+                        Debug.Log("Destroyed in a tie");
+                        SV.livingVikings.Remove(gameObject);
+                        Destroy(gameObject);
+                        
+                    }else
+                    {
+                        Debug.Log("Passed - Tie");
+                        PassObstacle(other.gameObject);
+                    }
+                }else
+                {
+                    Debug.Log("Destroyed in a tie");
+                    SV.livingVikings.Remove(gameObject);
+                    Destroy(gameObject);
+                }
             }
             else
             {
@@ -99,6 +116,7 @@ public class CollisionBehavior : MonoBehaviour {
     {
         if(passedObsticle.name == "Sea Monster(Clone)")
         {
+            AO.activeObsticles.Remove(passedObsticle);
             DestroyObject(passedObsticle);
         }
     }

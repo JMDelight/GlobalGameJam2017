@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SpawnVikings : MonoBehaviour {
 
@@ -9,15 +10,19 @@ public class SpawnVikings : MonoBehaviour {
     public GameObject battleShip;
     public float offScreenPosY;
     public float offScreenPosX;
+    public List<GameObject> livingVikings = new List<GameObject>();
+    public bool waveStarted;
+    private AvailableObsticles AO;
 
-   
-	// Use this for initialization
-	void Start () {
-
-	}
+    // Use this for initialization
+    void Start () {
+        AO = GameObject.Find("Available Obsticles").GetComponent<AvailableObsticles>();
+    }
 	
     public void SpawnWave(int surfers, int sailboats, int battleships)
     {
+        waveStarted = true;
+
         for (int i = 0; i < surfers; i++)
         {
             SpawnViking(surfer);
@@ -66,12 +71,33 @@ public class SpawnVikings : MonoBehaviour {
         Debug.Log("tempPos: " + tempPos);
         GameObject go = Instantiate(viking) as GameObject;
         go.transform.position = tempPos;
+        livingVikings.Add(go);
+    }
+
+    public void DestroyVikings()
+    {
+        for (int i = 0; i < livingVikings.Count; i++)
+        {
+            DestroyObject(livingVikings[i]);
+        }
+        livingVikings.Clear();
     }
 
 
 
 	// Update is called once per frame
 	void Update () {
-	
+        if (livingVikings.Count == 0 && waveStarted && !AO.gameOver)
+        {
+            waveStarted = false;
+            Debug.Log("Wave Cleared");
+            AO.actionText.text = "Wave Cleared!";
+            AO.ToggleActionText(true);
+            AO.actionTextTimer = 5f;
+            AO.DestroyObsticles();
+            AO.ResetAvailableObsticles();
+            AO.SirenObj.SetActive(false);
+            AO.ClearCursorChildren();
+        }
 	}
 }

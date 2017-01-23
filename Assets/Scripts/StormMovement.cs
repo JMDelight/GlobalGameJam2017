@@ -53,6 +53,6 @@ public class StormMovement : MonoBehaviour {
             zTarget = Random.Range(zMin, zMax);
         }
         destination = new Vector3(xTarget, yPos, zTarget);
-        Debug.Log(destination);
+        //Debug.Log(destination);
     }
 }
