@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
+
 
 public class SeamonsterMovement : MonoBehaviour {
     public float seekingRadius = 2;

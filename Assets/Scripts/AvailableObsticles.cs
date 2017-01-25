@@ -200,7 +200,7 @@ public class AvailableObsticles : MonoBehaviour {
     void Update () {
         if (cursorParent.transform.childCount > 0)
         {
-            if (Input.GetButtonUp("Place Obsticle"))
+            if (Input.GetButtonDown("Place Obsticle"))
             {
                 GameObject temp = cursorParent.transform.GetChild(0).gameObject;
                 temp.transform.parent = null;
