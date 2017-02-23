@@ -21,13 +21,20 @@ public class StormMovement : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
+    Debug.Log("Storm Move Start " + GetComponent<Transform>().position);
+    //if ((int)(Time.time * 100) % 30 == 2) {
+    //  //Debug.Log("Storm " + GetComponent<Transform>().position);
+
+    //}
     if (objectPlaced) {
       Move();
     }
+    Debug.Log("Storm Move End " + GetComponent<Transform>().position);
 
   }
 
   private void Move() {
+   
     Vector3 trip = destination - GetComponent<Transform>().position;
     if (trip.magnitude < 0.1) {
       GetNewDestination();

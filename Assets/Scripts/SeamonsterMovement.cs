@@ -21,6 +21,12 @@ public class SeamonsterMovement : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
+    //int timeChecker = (int)(Time.time * 100);
+    //if (timeChecker % 30 == 2) {
+    //  Debug.Log("SeaMonster " + GetComponent<Transform>().position);
+
+    //}
+    //Debug.Log("SeaMonster " + GetComponent<Transform>().position);
     if (objectPlaced) {
       if (!isSeeking) {
         CheckForTargets();
@@ -46,8 +52,8 @@ public class SeamonsterMovement : MonoBehaviour {
 
   public void AttachToParent()                //Set in AvailableObstacles script when the object is placed.
   {
-    Vector3 perpindicularVector = Vector3.Cross(worldCenter.position - self.position, new Vector3(worldCenter.position.x, 10.123f, worldCenter.position.y) - self.position);
-    self.rotation = Quaternion.LookRotation(perpindicularVector);
+    //Vector3 perpindicularVector = Vector3.Cross(worldCenter.position - self.position, new Vector3(worldCenter.position.x, 10.123f, worldCenter.position.y) - self.position);
+    //self.rotation = Quaternion.LookRotation(perpindicularVector);
     self.SetParent(worldCenter);
   }
   public void SeekTarget() {

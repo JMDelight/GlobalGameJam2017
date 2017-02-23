@@ -23,12 +23,7 @@ public class VikingAI : MonoBehaviour {
     if (Vector3.Distance(transform.position, Vector3.zero) < 2) {
       AO.gameOver = true;
       Debug.Log("YOU LOSE!");
-      AO.actionText.text = "The Vikings have taken the island!!! YOU LOSE.";
-      AO.actionTextTimer = 5f;
-      AO.ToggleActionText(true);
       AO.DestroyObstacles();
-      AO.RestartGameButton.SetActive(true);
-      AO.SirenObj.SetActive(false);
       SV.DestroyVikings();
       //AO.mainCamera.GetComponent<CameraController>().StartLerpMove(new Vector3(0, 2, -2), new Vector3(45, 0, 0));
       AO.UnicycleParent.SetActive(true);

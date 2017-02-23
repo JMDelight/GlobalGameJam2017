@@ -50,6 +50,8 @@ public class SirenControl : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
+    Debug.Log("Siren pos " + GetComponent<Transform>().position);
+
     if (objectPlaced) {
       foreach (Collider enemy in LuredEnemies) {
         if (enemy != null) {

@@ -8,11 +8,11 @@ public class WhirlpoolMovement : MonoBehaviour {
   //periodChange determines how long the spiral increases before decreasing again
   public float periodChange = 100;
   private Transform position;
-  public float xPosStart;                     //Set in AvailableObjects script when object is placed
-  public float zPosStart;                     //Set in AvailableObjects script when object is placed
+  public float xPosStart = 0;                     //Set in AvailableObjects script when object is placed
+  public float zPosStart = 0;                     //Set in AvailableObjects script when object is placed
   public bool objectPlaced;
   private bool circleIncreasing = true;
-  public float startingTime;
+  public float startingTime = 0;
 
 
 
@@ -21,8 +21,8 @@ public class WhirlpoolMovement : MonoBehaviour {
   void Start() {
     position = GetComponent<Transform>();
     objectPlaced = false;
-    xPosStart = 0;
-    zPosStart = 0;
+    //xPosStart = 0;
+    //zPosStart = 0;
     //xPosStart = position.position.x;
     //zPosStart = position.position.z;
 
@@ -31,6 +31,7 @@ public class WhirlpoolMovement : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
+    Debug.Log("Whirlpool Move Start " + GetComponent<Transform>().position + "| xPosStart:" + xPosStart + " zPosStart:" + zPosStart + " Time since placed:" + (Time.time - startingTime));
     if (objectPlaced) {
       //Debug.Log(Time.time - startingTime);
       //Debug.Log(Mathf.Sin(Time.time * periodChange));
@@ -51,6 +52,8 @@ public class WhirlpoolMovement : MonoBehaviour {
         circleSize -= circleGrowSpeed;
       }
     }
+    Debug.Log("Whirlpool Move End " + GetComponent<Transform>().position);
+
   }
 }
 

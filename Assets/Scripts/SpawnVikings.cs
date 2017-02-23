@@ -79,16 +79,12 @@ public class SpawnVikings : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-    Debug.Log(livingVikings.Count);
+    //Debug.Log(livingVikings.Count);
     if (livingVikings.Count == 0 && waveStarted && !AO.gameOver) {
       waveStarted = false;
       Debug.Log("Wave Cleared");
-      AO.actionText.text = "Wave Cleared!";
-      AO.ToggleActionText(true);
-      AO.actionTextTimer = 5f;
       AO.DestroyObstacles();
       AO.ResetAvailableObstacles();
-      AO.SirenObj.SetActive(false);
       AO.ClearCursorChildren();
     }
   }

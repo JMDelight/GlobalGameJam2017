@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlacementController : MonoBehaviour {
 
   public ViveController viveController;
-  public AvailableObstacles obstacleScript;
+  public AvailableObstacles AO;
 
 
   void Awake() {
@@ -30,21 +30,21 @@ public class PlacementController : MonoBehaviour {
 
   private void OnTriggerTouchDown(ViveController viveController) {
     Debug.Log("TriggerDown");
-    if(obstacleScript.availableSeaMonsters > 0) {
-      obstacleScript.CreateSeaMonster();
-    } else if (obstacleScript.availableWhirlpools > 0) {
-      obstacleScript.CreateWhirlpool();
-    } else if (obstacleScript.availableStorms > 0) {
-      obstacleScript.CreateStorm();
-    } else if (obstacleScript.availableSirens > 0) {
-      obstacleScript.CreateSiren();
+    if (AO.availableSeaMonsters > 0) {
+      AO.CreateSeaMonster();
+    } else if (AO.availableWhirlpools > 0) {
+      AO.CreateWhirlpool();
+    } else if (AO.availableStorms > 0) {
+      AO.CreateStorm();
+    } else if (AO.availableSirens > 0) {
+      AO.CreateSiren();
     }
   }
 
   private void OnTriggerTouchUp(ViveController viveController) {
     Debug.Log("TriggerUp");
 
-    obstacleScript.dropObstacle();
+    AO.dropObstacle();
   }
 
   private void OnRumble(ushort rumble) {
@@ -60,6 +60,15 @@ public class PlacementController : MonoBehaviour {
   private void OnGripRelease(ViveController viveController) {
    
 
+  }
+
+  void Update() {
+    //Debug.Log(GetComponent<Transform>().position);
+    //int timeChecker = (int)(Time.time * 100);
+    //if (timeChecker % 30 == 2) {
+    Debug.Log("Controller" + GetComponent<Transform>().position);
+
+    //}
   }
 
 }

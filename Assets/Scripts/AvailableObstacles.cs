@@ -1,31 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AvailableObstacles : MonoBehaviour {
-  public GameObject stormObj;
-  public GameObject whirlpoolObj;
-  public GameObject seaMonsterObj;
+
   public GameObject stormPrefab;
   public GameObject whirlpoolPrefab;
   public GameObject seaMonsterPrefab;
   public GameObject sirenPrefab;
   public GameObject cursorParent;
   public GameObject SpawnVikingsObj;
-  public GameObject RestartGameButton;
-  public GameObject SirenObj;
   public GameObject UnicycleParent;
-  public Text actionText;
 
   public int numberOfObstacles = 3;
 
   public bool gameOver;
-  public float actionTextTimer;
-  //private Text availableStormText;
-  //private Text availableWhirlpoolText;
-  //private Text availableSeaMonsterText;
-  //private Text availableSirenText;
 
   public int availableStorms;
   public int availableWhirlpools;
@@ -50,9 +38,7 @@ public class AvailableObstacles : MonoBehaviour {
     availableSeaMonsters = 3;
     availableSirens = 3;
     UpdateAvailableObstacleText();
-    actionText.text = "Place your obstacles...";
-    ToggleActionText(true);
-    actionTextTimer = 10f;
+    //ToggleActionText(true);
   }
 
   public void UpdateAvailableObstacleText() {
@@ -68,12 +54,13 @@ public class AvailableObstacles : MonoBehaviour {
         DestroyObject(cursorParent.transform.GetChild(1).gameObject);
       }
       GameObject go = Instantiate(stormPrefab, cursorParent.transform) as GameObject;
-      go.transform.localPosition = new Vector3(0, 0.8f, 0);
-      go.transform.localRotation = Quaternion.Euler(-110f, 0, 0);
+      go.transform.position = cursorParent.transform.position;
+      Debug.Log("Make Storm at Pos" + go.transform.position);
+      go.transform.localPosition = new Vector3(0.0f, 0.1f, 0.1f);
+      //go.transform.localPosition = new Vector3(0, 0.8f, 0);
       //ToggleObstacleButtons(false);
-      actionText.text = "Storms destroy the Sailboat but Surfers ride their waves to safety.";
-      ToggleActionText(true);
-      actionTextTimer = 5f;
+      //actionText.text = "Storms destroy the Sailboat but Surfers ride their waves to safety.";
+      //ToggleActionText(true);
     }
   }
   public void CreateWhirlpool() {
@@ -85,9 +72,8 @@ public class AvailableObstacles : MonoBehaviour {
       go.transform.localPosition = Vector3.zero;
       go.transform.localRotation = Quaternion.identity;
       //ToggleObstacleButtons(false);
-      actionText.text = "Whirlpools destroy the Battleship but the Sailboat maneuvers around them.";
-      ToggleActionText(true);
-      actionTextTimer = 5f;
+      //actionText.text = "Whirlpools destroy the Battleship but the Sailboat maneuvers around them.";
+      //ToggleActionText(true);
     }
   }
   public void CreateSeaMonster() {
@@ -99,9 +85,8 @@ public class AvailableObstacles : MonoBehaviour {
       go.transform.localPosition = Vector3.zero;
       go.transform.localRotation = Quaternion.identity;
       //ToggleObstacleButtons(false);
-      actionText.text = "Sea Monsters destroys the Surfer but is slain by the Battleship.";
-      ToggleActionText(true);
-      actionTextTimer = 5f;
+      //actionText.text = "Sea Monsters destroys the Surfer but is slain by the Battleship.";
+      //ToggleActionText(true);
     }
   }
 
@@ -111,27 +96,22 @@ public class AvailableObstacles : MonoBehaviour {
         DestroyObject(cursorParent.transform.GetChild(1).gameObject);
       }
       GameObject go = Instantiate(sirenPrefab, cursorParent.transform) as GameObject;
-      go.transform.localPosition = new Vector3(0, 1, 0);
+      go.transform.position = cursorParent.transform.position;
+      //Debug.Log("Make Siren at pos " + go.transform.position);
+      //go.transform.localPosition = new Vector3(0, 1, 0);
       go.transform.localRotation = Quaternion.identity;
       go.transform.GetChild(1).localPosition = Vector3.zero;
       go.transform.GetChild(1).localPosition = Vector3.zero;
 
-      actionText.text = "Siren lures nearby vikings to its location";
-      ToggleActionText(true);
-      actionTextTimer = 5f;
+      //actionText.text = "Siren lures nearby vikings to its location";
+      //ToggleActionText(true);
       //mainCamera.GetComponent<CameraController>().StartLerpMove(new Vector3(0, 10, 0), new Vector3(90, 0, 0));
     }
   }
 
-  public void ToggleObstacleButtons(bool buttonOn) {
-    stormObj.SetActive(buttonOn);
-    whirlpoolObj.SetActive(buttonOn);
-    seaMonsterObj.SetActive(buttonOn);
-  }
-
-  public void ToggleActionText(bool active) {
-    actionText.gameObject.SetActive(active);
-  }
+  //public void ToggleActionText(bool active) {
+  //  actionText.gameObject.SetActive(active);
+  //}
 
   public void DestroyObstacles() {
     Debug.Log(activeObstacles.Count);
@@ -149,8 +129,8 @@ public class AvailableObstacles : MonoBehaviour {
     availableWhirlpools = 3;
     availableStorms = 3;
     availableSirens = 3;
-    UpdateAvailableObstacleText();
-    ToggleObstacleButtons(true);
+    //UpdateAvailableObstacleText();
+    //ToggleObstacleButtons(true);
     //mainCamera.GetComponent<CameraController>().StartLerpMove(new Vector3(0, 10, 0), new Vector3(90, 0, 0));
   }
 
@@ -158,7 +138,6 @@ public class AvailableObstacles : MonoBehaviour {
   public void RestartGame() {
     //mainCamera.GetComponent<CameraController>().StartLerpMove(new Vector3(0, 10, 0), new Vector3(90, 0, 0));
     waveCount = 0;
-    RestartGameButton.SetActive(false);
     ResetAvailableObstacles();
     gameOver = false;
     UnicycleParent.SetActive(false);
@@ -170,54 +149,66 @@ public class AvailableObstacles : MonoBehaviour {
       DestroyObject(cursorParent.transform.GetChild(1).gameObject);
     }
     if (cursorParent.transform.GetChild(1).gameObject.name == "Siren(Clone)" && GameObject.Find("Spawn Viking").GetComponent<SpawnVikings>().waveStarted) {
-      SirenObj.SetActive(true);
+      //SirenObj.SetActive(true);
     } else {
-      ToggleObstacleButtons(true);
+      //ToggleObstacleButtons(true);
     }
   }
 
   public void dropObstacle() {
     if (cursorParent.transform.childCount > 1) {
+
       GameObject temp = cursorParent.transform.GetChild(1).gameObject;
+      Vector3 tempV3 = temp.GetComponent<Transform>().position;
       Transform obstacleTransform = temp.GetComponent<Transform>();
       obstacleTransform.rotation = Quaternion.identity;
-      Debug.Log("Drop " + temp.name);
+      Debug.Log("Drop " + temp.name + " Pos " + obstacleTransform.position);
       temp.transform.parent = null;
       activeObstacles.Add(temp);
-      Debug.Log(temp.name);
       switch (temp.name) {
         case "Storm(Clone)":
           availableStorms--;
-          obstacleTransform.position = new Vector3(obstacleTransform.position.x, 0.8f, obstacleTransform.position.y);
+          obstacleTransform.position = new Vector3(obstacleTransform.position.x, 0.8f, obstacleTransform.position.z);
           StormMovement SMTemp = temp.GetComponent<StormMovement>();
           SMTemp.yPos = temp.transform.position.y;
           SMTemp.objectPlaced = true;
+          obstacleTransform.localRotation = Quaternion.Euler(-90f, 0, 0);
+
           Debug.Log(availableStorms);
           break;
         case "Whirlpool(Clone)":
-          obstacleTransform.position = new Vector3(obstacleTransform.position.x, 0.0f, obstacleTransform.position.y);
+          obstacleTransform.position = new Vector3(obstacleTransform.position.x, 0.0f, obstacleTransform.position.z);
 
           WhirlpoolMovement WPMTemp = temp.GetComponent<WhirlpoolMovement>();
+          Debug.Log(temp.transform.position);
           WPMTemp.xPosStart = temp.transform.position.x;
-          WPMTemp.zPosStart = temp.transform.position.z - WPMTemp.circleSize;
+          //WPMTemp.zPosStart = temp.transform.position.z - WPMTemp.circleSize;
+          WPMTemp.zPosStart = temp.transform.position.z - 1.0f;
+
           WPMTemp.startingTime = Time.time;
           WPMTemp.objectPlaced = true;
           availableWhirlpools--;
+          temp.GetComponent<Transform>().position = new Vector3(tempV3.x, 0.0f, tempV3.z);
+
           break;
         case "Sea Monster(Clone)":
-          obstacleTransform.position = new Vector3(obstacleTransform.position.x, 0.0f, obstacleTransform.position.y);
+          obstacleTransform.position = new Vector3(obstacleTransform.position.x, 0.0f, obstacleTransform.position.z);
           SeamonsterMovement SMMTemp = temp.GetComponent<SeamonsterMovement>();
           SMMTemp.objectPlaced = true;
           SMMTemp.AttachToParent();
           availableSeaMonsters--;
+          temp.GetComponent<Transform>().position = new Vector3(tempV3.x, 0.0f, tempV3.z);
+
           break;
         case "Siren(Clone)":
-          obstacleTransform.position = new Vector3(obstacleTransform.position.x, 0.0f, obstacleTransform.position.y);
+          obstacleTransform.position = new Vector3(obstacleTransform.position.x, 0.0f, obstacleTransform.position.z);
           //mainCamera.GetComponent<CameraController>().StartLerpMove(new Vector3(0, 10, -5.5f), new Vector3(60, 0, 0));
           SirenControl SCTemp = temp.GetComponent<SirenControl>();
           SCTemp.objectPlaced = true;
           SCTemp.SetupSiren();
           availableSirens--;
+          temp.GetComponent<Transform>().position = new Vector3(tempV3.x, 0.0f, tempV3.z);
+
           break;
       }
       if (availableStorms == 0 && availableWhirlpools == 0 && availableSeaMonsters == 0 && temp.name != "Siren(Clone)") {
@@ -226,8 +217,7 @@ public class AvailableObstacles : MonoBehaviour {
         //if (availableSirens == 0) {
         //  SirenObj.SetActive(false);
         //}
-        actionText.text = "Wave: " + waveCount.ToString();
-        actionTextTimer = 10f;
+        //actionText.text = "Wave: " + waveCount.ToString();
         switch (waveCount) {
           case 0:
             SpawnVikingsObj.GetComponent<SpawnVikings>().SpawnWave(1, 1, 1);
@@ -244,6 +234,13 @@ public class AvailableObstacles : MonoBehaviour {
         }
         waveCount++;
       }
+      Debug.Log("End Drop " + temp.name + " Pos " + obstacleTransform.position);
+
     }
+
+  }
+
+  void Update() {
+
   }
 }
