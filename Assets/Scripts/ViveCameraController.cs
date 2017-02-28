@@ -13,7 +13,7 @@ public class ViveCameraController : MonoBehaviour {
 	void Start () {
     parentTransform = GetComponent<Transform>();
     cameraTransform = parentTransform.Find("Camera (eye)").GetComponent<Transform>();
-    Debug.Log(cameraTransform);
+    //Debug.Log(cameraTransform);
 
   }
 
@@ -21,14 +21,14 @@ public class ViveCameraController : MonoBehaviour {
   void LateUpdate () {
 
     if (cameraTransform.position.y < heightMin) {
-      Debug.Log("Too Low");
+      //Debug.Log("Too Low");
       float heightDif = heightMin - cameraTransform.position.y;
-      Debug.Log("Diff: " + heightDif);
+      //Debug.Log("Diff: " + heightDif);
       parentTransform.Translate(new Vector3(0, heightDif, 0));
     } else if (cameraTransform.position.y > heightMax) {
-      Debug.Log("Too High");
+      //Debug.Log("Too High");
       float heightDif = heightMax - cameraTransform.position.y;
-      Debug.Log("Diff: " + heightDif);
+      //Debug.Log("Diff: " + heightDif);
       parentTransform.Translate(new Vector3(0, heightDif, 0));
 
     }

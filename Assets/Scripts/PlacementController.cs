@@ -16,7 +16,7 @@ public class PlacementController : MonoBehaviour {
     viveController.OnTriggerTouchDown += OnTriggerTouchDown;
     viveController.OnTriggerTouchUp += OnTriggerTouchUp;
     viveController.OnGripPress += OnGripPress;
-    viveController.OnGripRelease += OnGripRelease;
+    //viveController.OnGripRelease += OnGripRelease;
 
   }
 
@@ -24,7 +24,7 @@ public class PlacementController : MonoBehaviour {
     viveController.OnTriggerTouchDown -= OnTriggerTouchDown;
     viveController.OnTriggerTouchUp -= OnTriggerTouchUp;
     viveController.OnGripPress -= OnGripPress;
-    viveController.OnGripRelease -= OnGripRelease;
+    //viveController.OnGripRelease -= OnGripRelease;
 
   }
 
@@ -54,7 +54,9 @@ public class PlacementController : MonoBehaviour {
   }
 
   private void OnGripPress(ViveController viveController) {
-    
+    if (AO.gameOver) {
+      AO.RestartGame();
+    }
   }
 
   private void OnGripRelease(ViveController viveController) {
