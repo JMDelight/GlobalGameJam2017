@@ -68,7 +68,7 @@ public class PlacementController : MonoBehaviour {
     //Debug.Log(GetComponent<Transform>().position);
     //int timeChecker = (int)(Time.time * 100);
     //if (timeChecker % 30 == 2) {
-    Debug.Log("Controller" + GetComponent<Transform>().position);
+    //Debug.Log("Controller" + GetComponent<Transform>().position);
 
     //}
   }

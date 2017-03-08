@@ -86,8 +86,12 @@ public class CollisionBehavior : MonoBehaviour {
 
   private void PassObstacle(GameObject passedObstacle) {
     if (passedObstacle.name == "Sea Monster(Clone)") {
-      AO.activeObstacles.Remove(passedObstacle);
-      DestroyObject(passedObstacle);
+      int random = Random.Range(0, 2);
+      if (random == 0) {
+
+        AO.activeObstacles.Remove(passedObstacle);
+        DestroyObject(passedObstacle);
+      }
     }
   }
 

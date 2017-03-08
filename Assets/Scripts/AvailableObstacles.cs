@@ -10,6 +10,7 @@ public class AvailableObstacles : MonoBehaviour {
   public GameObject cursorParent;
   public GameObject SpawnVikingsObj;
   public GameObject UnicycleParent;
+  public TextMesh actionText;
 
   public int numberOfObstacles = 3;
 
@@ -72,7 +73,7 @@ public class AvailableObstacles : MonoBehaviour {
       go.transform.localPosition = Vector3.zero;
       go.transform.localRotation = Quaternion.identity;
       //ToggleObstacleButtons(false);
-      //actionText.text = "Whirlpools destroy the Battleship but the Sailboat maneuvers around them.";
+      actionText.text = "Whirlpools destroy \nthe Battleship but \nthe Sailboat maneuvers \naround them.";
       //ToggleActionText(true);
     }
   }
@@ -85,7 +86,7 @@ public class AvailableObstacles : MonoBehaviour {
       go.transform.localPosition = Vector3.zero;
       go.transform.localRotation = Quaternion.identity;
       //ToggleObstacleButtons(false);
-      //actionText.text = "Sea Monsters destroys the Surfer but is slain by the Battleship.";
+      actionText.text = "Sea Monsters destroy \nthe Surfer but is \nslain by the Battleship.";
       //ToggleActionText(true);
     }
   }
@@ -103,7 +104,7 @@ public class AvailableObstacles : MonoBehaviour {
       go.transform.GetChild(1).localPosition = Vector3.zero;
       go.transform.GetChild(1).localPosition = Vector3.zero;
 
-      //actionText.text = "Siren lures nearby vikings to its location";
+      actionText.text = "Siren lures \nnearby vikings to \nits location";
       //ToggleActionText(true);
       //mainCamera.GetComponent<CameraController>().StartLerpMove(new Vector3(0, 10, 0), new Vector3(90, 0, 0));
     }
@@ -217,7 +218,7 @@ public class AvailableObstacles : MonoBehaviour {
         //if (availableSirens == 0) {
         //  SirenObj.SetActive(false);
         //}
-        //actionText.text = "Wave: " + waveCount.ToString();
+        actionText.text = "Wave: " + waveCount.ToString();
         switch (waveCount) {
           case 0:
             SpawnVikingsObj.GetComponent<SpawnVikings>().SpawnWave(1, 1, 1);
