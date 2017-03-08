@@ -11,6 +11,7 @@ public class AvailableObstacles : MonoBehaviour {
   public GameObject SpawnVikingsObj;
   public GameObject UnicycleParent;
   public TextMesh actionText;
+  public float actionTextTimer;
 
   public int numberOfObstacles = 3;
 
@@ -38,8 +39,10 @@ public class AvailableObstacles : MonoBehaviour {
     availableWhirlpools = 3;
     availableSeaMonsters = 3;
     availableSirens = 3;
-    UpdateAvailableObstacleText();
-    //ToggleActionText(true);
+    //UpdateAvailableObstacleText();
+    ToggleActionText(true);
+    actionTextTimer = 10.0f;
+
   }
 
   public void UpdateAvailableObstacleText() {
@@ -60,8 +63,10 @@ public class AvailableObstacles : MonoBehaviour {
       go.transform.localPosition = new Vector3(0.0f, 0.1f, 0.1f);
       //go.transform.localPosition = new Vector3(0, 0.8f, 0);
       //ToggleObstacleButtons(false);
-      //actionText.text = "Storms destroy the Sailboat but Surfers ride their waves to safety.";
-      //ToggleActionText(true);
+      actionText.text = "Storms destroy the \nSailboat but Surfers \nride their waves to safety.";
+      ToggleActionText(true);
+      actionTextTimer = 10.0f;
+
     }
   }
   public void CreateWhirlpool() {
@@ -74,7 +79,9 @@ public class AvailableObstacles : MonoBehaviour {
       go.transform.localRotation = Quaternion.identity;
       //ToggleObstacleButtons(false);
       actionText.text = "Whirlpools destroy \nthe Battleship but \nthe Sailboat maneuvers \naround them.";
-      //ToggleActionText(true);
+      ToggleActionText(true);
+      actionTextTimer = 10.0f;
+
     }
   }
   public void CreateSeaMonster() {
@@ -87,7 +94,9 @@ public class AvailableObstacles : MonoBehaviour {
       go.transform.localRotation = Quaternion.identity;
       //ToggleObstacleButtons(false);
       actionText.text = "Sea Monsters destroy \nthe Surfer but is \nslain by the Battleship.";
-      //ToggleActionText(true);
+      ToggleActionText(true);
+      actionTextTimer = 10.0f;
+
     }
   }
 
@@ -105,14 +114,15 @@ public class AvailableObstacles : MonoBehaviour {
       go.transform.GetChild(1).localPosition = Vector3.zero;
 
       actionText.text = "Siren lures \nnearby vikings to \nits location";
-      //ToggleActionText(true);
+      ToggleActionText(true);
+      actionTextTimer = 10.0f;
       //mainCamera.GetComponent<CameraController>().StartLerpMove(new Vector3(0, 10, 0), new Vector3(90, 0, 0));
     }
   }
 
-  //public void ToggleActionText(bool active) {
-  //  actionText.gameObject.SetActive(active);
-  //}
+  public void ToggleActionText(bool active) {
+    actionText.gameObject.SetActive(active);
+  }
 
   public void DestroyObstacles() {
     Debug.Log(activeObstacles.Count);
@@ -242,6 +252,14 @@ public class AvailableObstacles : MonoBehaviour {
   }
 
   void Update() {
-
+    if (actionTextTimer > 0) {
+      actionTextTimer -= 1f * Time.deltaTime;
+      //Debug.Log(actionTextTimer);
+      if (actionTextTimer < 0) {
+        actionTextTimer = 0;
+      }
+    } else if (actionText.gameObject.activeInHierarchy && actionTextTimer == 0) {
+      ToggleActionText(false);
+    }
   }
 }

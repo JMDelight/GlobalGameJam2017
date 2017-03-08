@@ -87,6 +87,8 @@ public class SpawnVikings : MonoBehaviour {
       AO.ResetAvailableObstacles();
       AO.ClearCursorChildren();
       AO.actionText.text = "Wave Cleared";
+      AO.ToggleActionText(true);
+      AO.actionTextTimer = 10.0f;
     }
   }
 }
